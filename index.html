@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Color Generator</title>
+  </head>
+
+  <body>
+    <div>
+      <label>
+        <input type="checkbox" class="input__check l" id="dark-mode-toggle" />
+        <span class="slider"></span>
+      </label>
+      <div class="container">
+        <h1>Color Generator</h1>
+        <div class="controls">
+          <div class="button-group">
+            <button id="solid-color-button">Solid Color</button>
+            <button id="gradient-color-button">Gradient</button>
+          </div>
+          <div id="gradient-options" style="display: none">
+            <div style="display: flex; justify-content: space-between">
+              <div>
+                <input
+                  type="radio"
+                  id="gradient-type-linear"
+                  name="gradient-type"
+                  value="linear"
+                  checked
+                />
+                <label for="gradient-type-linear">Linear</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="gradient-type-radial"
+                  name="gradient-type"
+                  value="radial"
+                />
+                <label for="gradient-type-radial">Radial</label>
+              </div>
+            </div>
+            <div>
+              <label for="num-colors-gradient">Number of Colors:</label>
+              <input type="number" id="num-colors-gradient" value="2" min="2" />
+            </div>
+            <div>
+              <label for="num-colors-radial">Number of Colors (Radial):</label>
+              <input type="number" id="num-colors-radial" value="2" min="2" />
+            </div>
+            <button id="generate-gradient-button">Generate</button>
+          </div>
+          <div class="pen-preview"></div>
+          <table id="color-table">
+            <thead>
+              <tr>
+                <th>Color</th>
+                <th>Hex</th>
+                <th>RGBA</th>
+                <th>CMYK</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <section class="about-section">
+        <h2>About</h2>
+        <div class="intro">
+          <p>
+            Hi, I'm Muhammad Faeez Shabbir, the creator of this Color Generator
+            project. I'm passionate about web development and creating useful
+            tools for designers and developers.
+          </p>
+          <p>
+            Feel free to explore the color generator and copy the generated
+            colors for your projects. If you have any feedback or suggestions,
+            please don't hesitate to reach out!
+          </p>
+        </div>
+        <div class="github">
+          <p>Check out the project on GitHub:</p>
+          <a href="https://github.com/mfaeezshabbir" target="_blank"
+            >mfaeezshabbir</a
+          >
+        </div>
+      </section>
+      <div id="notification" class="notification"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
