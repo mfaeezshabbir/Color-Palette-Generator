@@ -3,7 +3,7 @@
 **Description:**
 The Color Palette Generator is a web application that allows users to generate beautiful color palettes for their design projects. Whether you're a designer, developer, or artist, this tool can help you explore and discover harmonious color combinations to enhance your creative work.
 
-**Key Features:**
+## **Key Features:**
 
 1. Generate Color Palettes: Create custom color palettes by choosing colors manually or generating random combinations.
 2. Color Code Conversion: Easily convert colors between various formats such as HEX, RGB, and CMYK.
@@ -15,6 +15,6 @@ The Color Palette Generator is a web application that allows users to generate b
 
 The Color Palette Generator is a handy tool for designers, developers, and anyone seeking color inspiration. It simplifies the process of color selection and provides a platform to experiment with various color schemes. Start exploring vibrant palettes and unleash your creativity with the Color Palette Generator.
 
-**GitHub Repository:** [Link to the GitHub repository]
+**Site is live at:** <https://mfaeezshabbir.github.io/Color-Palette-Generator/>
 
 Note: The Color Palette Generator is an open-source project built with HTML, CSS, and JavaScript. Contributions and feedback are welcome to improve and enhance the functionality of the application.

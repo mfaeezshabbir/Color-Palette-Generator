@@ -187,7 +187,7 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 200px;
-  background-color: #2f3136;
+  background-color: #4865cd;
   border-radius: 8px;
   margin-bottom: 30px;
 }
@@ -362,6 +362,8 @@ td:not(:first-child) {
   font-size: 12px;
   text-align: center;
   padding: 8px;
+  margin: 20px;
+  text-transform: capitalize;
 }
 
 /* Optional: Add some styling to indicate the mode visually */
@@ -410,7 +412,7 @@ body {
 }
 
 .l {
-  background-color: #000000;
+  background-color: #ffffff;
   border-radius: 0.75em;
   box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.3) inset;
   color: #d7d7d7;
@@ -460,7 +462,7 @@ body {
 }
 /* Checked */
 .l:checked {
-  background-color: #000000;
+  background-color: #494949;
   box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
 }
 

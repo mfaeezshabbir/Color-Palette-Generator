@@ -287,4 +287,5 @@ function generateGradient() {
 }
 
 // Initial generation
-generateSolidColor();
+// generateSolidColor();
+
