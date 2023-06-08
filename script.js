@@ -20,6 +20,7 @@ darkModeToggle.addEventListener("change", () => {
 solidColorButton.addEventListener("click", () => {
   showGradientOptions(false);
   generateSolidColor();
+  
 });
 
 gradientColorButton.addEventListener("click", () => {
@@ -50,6 +51,7 @@ function generateSolidColor() {
   const color = generateRandomColor();
   const preview = document.querySelector(".pen-preview");
   preview.style.background = color;
+  solidColorButton.style.background = color;
   colorTableBody.innerHTML = "";
   const row = createColorTableRow(1, color);
   colorTableBody.appendChild(row);
@@ -59,6 +61,9 @@ function generateLinearGradient(numColors) {
   const preview = document.querySelector(".pen-preview");
   const gradientColors = generateRandomColors(numColors);
   preview.style.background = `linear-gradient(to right, ${gradientColors.join(
+    ", "
+  )})`;
+  gradientColorButton.style.background = `linear-gradient(to right, ${gradientColors.join(
     ", "
   )})`;
   colorTableBody.innerHTML = "";
@@ -72,6 +77,9 @@ function generateRadialGradient(numColors) {
   const preview = document.querySelector(".pen-preview");
   const gradientColors = generateRandomColors(numColors);
   preview.style.background = `radial-gradient(circle, ${gradientColors.join(
+    ", "
+  )})`;
+  gradientColorButton.style.background = `radial-gradient(circle, ${gradientColors.join(
     ", "
   )})`;
   colorTableBody.innerHTML = "";
@@ -228,6 +236,55 @@ colorTable.addEventListener("click", (event) => {
     }
   }
 });
+
+// DOM elements
+const gradientTypeLinear = document.getElementById("gradient-type-linear");
+const gradientTypeRadial = document.getElementById("gradient-type-radial");
+const linearGradientOptions = document.getElementById(
+  "linear-gradient-options"
+);
+const radialGradientOptions = document.getElementById(
+  "radial-gradient-options"
+);
+const gradientAngle = document.getElementById("gradient-angle");
+
+// Event listeners
+gradientTypeLinear.addEventListener("change", toggleGradientOptions);
+gradientTypeRadial.addEventListener("change", toggleGradientOptions);
+
+// Function to toggle gradient options based on selected type
+function toggleGradientOptions() {
+  if (gradientTypeLinear.checked) {
+    linearGradientOptions.style.display = "block";
+    radialGradientOptions.style.display = "none";
+  } else if (gradientTypeRadial.checked) {
+    linearGradientOptions.style.display = "none";
+    radialGradientOptions.style.display = "block";
+  }
+}
+
+// Generate gradient button event listener
+document
+  .getElementById("generate-gradient-button")
+  .addEventListener("click", generateGradient);
+
+// Generate gradient
+function generateGradient() {
+  const startColor = document.getElementById("start-color").value;
+  const endColor = document.getElementById("end-color").value;
+  let gradientCode = "";
+
+  if (gradientTypeLinear.checked) {
+    const angle = gradientAngle.value;
+    gradientCode = `linear-gradient(${angle}deg, ${startColor}, ${endColor})`;
+  } else if (gradientTypeRadial.checked) {
+    const numColorsRadial = document.getElementById("num-colors-radial").value;
+    gradientCode = `radial-gradient(circle, ${startColor}, ${endColor})`;
+  }
+
+  document.getElementById("gradient-preview").style.background = gradientCode;
+  document.getElementById("gradient-code-text").value = gradientCode;
+}
 
 // Initial generation
 generateSolidColor();

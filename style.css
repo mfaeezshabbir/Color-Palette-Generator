@@ -1,9 +1,10 @@
 body {
   font-family: cursive, sans-serif;
   margin: 0;
-  padding: 10rem;
+  padding: 5rem;
   background-color: #36393f;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -66,11 +67,11 @@ h1 {
 }
 
 #gradient-options {
+  display: none;
   margin-bottom: 20px;
 }
 
 #gradient-options > div {
-  display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
@@ -78,10 +79,91 @@ h1 {
 #gradient-options label {
   margin-left: 10px;
   font-size: 14px;
-  color: #ffffff;
+  color: #677bc4;
   cursor: pointer;
 }
 
+.container2 form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.container2 label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+}
+
+.container2 label input {
+  position: absolute;
+  left: -9999px;
+}
+
+.container2 label input:checked + span {
+  background-color: #4865cd;
+  color: white;
+}
+
+.container2 label input:checked + span:before {
+  -webkit-box-shadow: inset 0 0 0 0.4375em #00005c;
+  box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+
+.container2 label span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  color: #4865cd;
+}
+
+.container2 label span:hover {
+  background-color: #d6d6e5;
+}
+
+.container2 label span:before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  -webkit-box-shadow: inset 0 0 0 0.125em #00005c;
+  box-shadow: inset 0 0 0 0.125em #00005c;
+}
+
+.num_input{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
 #generate-gradient-button {
   padding: 10px 20px;
@@ -135,7 +217,7 @@ h1 {
   color: #f5f5f5;
   font-size: larger;
 }
- td:not(:first-child) {
+td:not(:first-child) {
   background-color: #2f3136;
 }
 
@@ -231,13 +313,18 @@ h1 {
 }
 
 .about-section {
-  background-color: #36393f;
+  background-color: #2f3136;
   width: 600px;
-  margin: 0 auto;
-  padding: 40px;
-  border-radius: 3rem;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.281);
+  min-width: 50vw;
+  border-radius: 3rem;
+  box-shadow: 0 0 10px #d3d1d1b9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  margin-bottom: 5rem;
 }
 
 .about-section h2 {
@@ -284,7 +371,7 @@ body {
 
 .dark-mode {
   background-color: #fff;
-  color: #36393f  ;
+  color: #36393f;
   transition: background-color 0.3s ease;
 }
 
@@ -325,7 +412,7 @@ body {
 .l {
   background-color: #000000;
   border-radius: 0.75em;
-  box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.3) inset;
+  box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.3) inset;
   color: #d7d7d7;
   display: inline-flex;
   align-items: center;
@@ -339,7 +426,8 @@ body {
   appearance: none;
 }
 
-.l:before, .l:after {
+.l:before,
+.l:after {
   content: "";
   display: block;
 }
@@ -354,9 +442,11 @@ body {
 }
 
 .l:after {
-  background: linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
-		repeating-linear-gradient(90deg,#bbb 0,#bbb,#bbb 20%,#999 20%,#999 40%) 0 50% / 50% 100%,
-		radial-gradient(circle at 50% 50%,#888 25%, transparent 26%);
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.15) 0) 0 50% /
+      50% 100%,
+    repeating-linear-gradient(90deg, #bbb 0, #bbb, #bbb 20%, #999 20%, #999 40%)
+      0 50% / 50% 100%,
+    radial-gradient(circle at 50% 50%, #888 25%, transparent 26%);
   background-repeat: no-repeat;
   border: 0.25em solid transparent;
   border-left: 0.4em solid #d8d8d8;
@@ -371,12 +461,12 @@ body {
 /* Checked */
 .l:checked {
   background-color: #000000;
-  box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
+  box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
 }
 
 .l:checked:before {
   background-color: currentColor;
-  transform: translateX(125%)
+  transform: translateX(125%);
 }
 
 .l:checked:after {
@@ -385,6 +475,6 @@ body {
 }
 /* Other States */
 .l:focus {
-	/* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
+  /* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
   outline: 0;
 }
